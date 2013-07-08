@@ -28,6 +28,41 @@
 			// configure legacy, retina, touch requirements @ conditionizr.com
 			conditionizr()
 		}()
+		<?php if ($data['switch_sldr'] == "1") { ?>
+		$(function() {
+			$("#slider").carouFredSel({
+				responsive: true,
+				width: '100%',
+				items: {
+					visible: 1,
+					minimum: 1
+				},
+				scroll: {
+					items: 1,
+					fx: "<?php echo $data['transition_select']; ?>",
+					duration: 500,
+					pauseOnHover: true
+				},
+				auto: {
+					timeoutDuration: 3000,
+					delay: 500
+				},
+				prev: {
+					button: "#prev",
+					key: "right"
+				},
+				next: {
+					button: "#next",
+					key: "left"
+				},
+				prev: '#prev',
+				next: '#next',
+				pagination: "#paginator",
+				swipe: true
+			});
+		});
+		<?php } ?>
+
 		</script>
 		
 		<style>
@@ -40,6 +75,12 @@
 			.gfont {
 				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;
 			}
+			.bfont {
+				Font-family: <?php echo $data['body_font']['face']?>;
+				Font-size: <?php echo $data['body_font']['size']?>;
+				Color: <?php echo $data['body_font']['color']?> ;
+				Font-weight: <?php echo $data['body_font']['style']?>;
+			}
 			.tcolor {
 				color: <?php echo $data['text_color']; ?>;
 			}
@@ -50,6 +91,8 @@
 					background-position: <?php echo $data['sbg_position']; ?>;
 			}
 			<?php } ?>
+			
+			<?php echo $data['custom_css']; ?>
 		</style>
 	</head>
 	<body <?php body_class(); ?>>
@@ -80,3 +123,27 @@
 			
 			</header>
 			<!-- /header -->
+			
+			<?php if ($data['switch_sldr'] == "1") { ?>
+			<div id="sliderap">
+				<ul id="slider"  class="clear">
+					<li class="slide">
+						
+						<h2>This is a slide</h2>
+						
+					</li>
+										<li class="slide">
+						
+						<h2>This is a slide</h2>
+						
+					</li>
+				</ul>
+				<div id="controls">
+					<a id="next" href="#">next</a>
+					<span id="paginator"></span>
+					<a id="prev" href="#">previous</a>
+				</div>
+			</div>
+			<?php } ?>
+			
+			

@@ -1026,21 +1026,26 @@ $of_options[] = array( 	"name" 		=> "Custom CSS",
 						"type" 		=> "textarea"
 				);
 				
-$of_options[] = array( 	"name" 		=> "Example Options",
+$of_options[] = array( 	"name" 		=> "Home Settings",
 						"type" 		=> "heading"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Typography",
-						"desc" 		=> "This is a typographic specific option.",
-						"id" 		=> "typography",
-						"std" 		=> array(
-											'size'  => '12px',
-											'face'  => 'verdana',
-											'style' => 'bold italic',
-											'color' => '#123456'
-										),
-						"type" 		=> "typography"
-				);  
+
+$of_options[] = array( 	"name" 		=> "Homepage Slider",
+						"desc" 		=> "Add slides under the 'Slider' post type.",
+						"id" 		=> "switch_sldr",
+						"std" 		=> 1,
+						"on" 		=> "Enable",
+						"off" 		=> "Disable",
+						"type" 		=> "switch"
+				);				
+
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "Transition Effect, Slide Animation.",
+						"id" 		=> "transition_select",
+						"std" 		=> "directscroll",
+						"type" 		=> "select",
+						"options" 	=> array('scroll' => 'scroll','directscroll' => 'directscroll','fade' => 'fade','crossfade' => 'crossfade','cover' => 'cover','cover-fade' => 'cover-fade','uncover' => 'uncover','uncover-fade' => 'uncover-fade'),
+				);
 				
 $of_options[] = array( 	"name" 		=> "Border",
 						"desc" 		=> "This is a border specific option.",

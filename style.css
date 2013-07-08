@@ -2,7 +2,7 @@
 	Theme Name: Workframe
 	Theme URI: http://
 	Description: Theme workframe for production
-	Version: 0.1
+	Version: 0.2
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -91,6 +91,26 @@ input:focus {
 /* nav */
 .nav {
 	
+}
+/* slider */
+
+.slide {
+	float: left;
+}
+
+#prev, #next, #paginator, #paginator a {
+	display: inline-block;
+}
+#prev, #next {
+	width: 10%;
+	float: left; 
+}
+#prev {
+	text-align: right;
+}#paginator {
+	width: 80%;
+	text-align: center;
+	float: left; 
 }
 /* sidebar */
 .sidebar {
