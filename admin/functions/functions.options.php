@@ -10,7 +10,7 @@ if (!function_exists('of_options'))
 		$of_categories 		= array();  
 		$of_categories_obj 	= get_categories('hide_empty=0');
 		foreach ($of_categories_obj as $of_cat) {
-		    $of_categories[$of_cat->cat_ID] = $of_cat->cat_name;}
+		    $of_categories[$of_cat->cat_ID] = $of_cat->slug;}
 		$categories_tmp 	= array_unshift($of_categories, "Select a category:");    
 	       
 		//Access the WordPress Pages via an Array
@@ -29,13 +29,12 @@ if (!function_exists('of_options'))
 		( 
 			"disabled" => array (
 				"placebo" 		=> "placebo", //REQUIRED!
-				"block_one"		=> "Block One",
-				"block_two"		=> "Block Two",
-				"block_three"	=> "Block Three",
+				"block_two"		=> "Home widget area",
+				"block_three"	=> "Category Feed"
 			), 
 			"enabled" => array (
 				"placebo" 		=> "placebo", //REQUIRED!
-				"block_four"	=> "Block Four",
+				"block_one"		=> "Latest Post"
 			),
 		);
 
@@ -1047,36 +1046,25 @@ $of_options[] = array( 	"name" 		=> "",
 						"options" 	=> array('scroll' => 'scroll','directscroll' => 'directscroll','fade' => 'fade','crossfade' => 'crossfade','cover' => 'cover','cover-fade' => 'cover-fade','uncover' => 'uncover','uncover-fade' => 'uncover-fade'),
 				);
 				
-$of_options[] = array( 	"name" 		=> "Border",
-						"desc" 		=> "This is a border specific option.",
-						"id" 		=> "border",
-						"std" 		=> array(
-											'width' => '2',
-											'style' => 'dotted',
-											'color' => '#444444'
-										),
-						"type" 		=> "border"
+$of_options[] = array( 	"name" 		=> "Homepage Layout",
+						"desc" 		=> "Organize how you want the layout to appear on the homepage",
+						"id" 		=> "homepage_blocks",
+						"std" 		=> $of_options_homepage_blocks,
+						"type" 		=> "sorter"
 				);
 				
-$of_options[] = array( 	"name" 		=> "Colorpicker",
-						"desc" 		=> "No color selected.",
-						"id" 		=> "example_colorpicker",
-						"std" 		=> "",
-						"type" 		=> "color"
-					); 
-					
-$of_options[] = array( 	"name" 		=> "Colorpicker (default #2098a8)",
-						"desc" 		=> "Color selected.",
-						"id" 		=> "example_colorpicker_2",
-						"std" 		=> "#2098a8",
-						"type" 		=> "color"
-				);
-
-$of_options[] = array( 	"name" 		=> "Input Text",
-						"desc" 		=> "A text input field.",
-						"id" 		=> "test_text",
-						"std" 		=> "Default Value",
+$of_options[] = array( 	"name" 		=> "Homepage block settings",
+						"desc" 		=> "<b>Post per page</b> Applies to latest posts block and category feed block.",
+						"id" 		=> "post_counts",
+						"std" 		=> "5",
 						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "<b>Category Block</b> Display a category on the Category Block.",
+						"id" 		=> "cat_block",
+						"std" 		=> "Select a category:",
+						"type" 		=> "select",
+						"options" 	=> $of_categories
 				);
 				
 $of_options[] = array( 	"name" 		=> "Input Checkbox (false)",
@@ -1161,13 +1149,7 @@ $of_options[] = array( 	"name" 		=> "Multicheck",
 						"options" 	=> $of_options_radio
 				);
 				
-$of_options[] = array( 	"name" 		=> "Select a Category",
-						"desc" 		=> "A list of all the categories being used on the site.",
-						"id" 		=> "example_category",
-						"std" 		=> "Select a category:",
-						"type" 		=> "select",
-						"options" 	=> $of_categories
-				);
+ 
 				
 //Advanced Settings
 $of_options[] = array( 	"name" 		=> "Advanced Settings",

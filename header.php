@@ -1,6 +1,6 @@
 <?php global $data; 
 	  $gfont = explode(' ', $data['gf_select']);
-	  $cssfont = implode("+", $gfont);  	  
+	  $cssfont = implode("+", $gfont);  
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -44,7 +44,7 @@
 					pauseOnHover: true
 				},
 				auto: {
-					timeoutDuration: 3000,
+					timeoutDuration: 2000,
 					delay: 500
 				},
 				prev: {
@@ -55,9 +55,10 @@
 					button: "#next",
 					key: "left"
 				},
-				prev: '#prev',
-				next: '#next',
-				pagination: "#paginator",
+				pagination: {
+					container:  "#paginator",
+					anchorBuilder: false
+				},
 				swipe: true
 			});
 		});
@@ -124,26 +125,6 @@
 			</header>
 			<!-- /header -->
 			
-			<?php if ($data['switch_sldr'] == "1") { ?>
-			<div id="sliderap">
-				<ul id="slider"  class="clear">
-					<li class="slide">
-						
-						<h2>This is a slide</h2>
-						
-					</li>
-										<li class="slide">
-						
-						<h2>This is a slide</h2>
-						
-					</li>
-				</ul>
-				<div id="controls">
-					<a id="next" href="#">next</a>
-					<span id="paginator"></span>
-					<a id="prev" href="#">previous</a>
-				</div>
-			</div>
-			<?php } ?>
+			
 			
 			
