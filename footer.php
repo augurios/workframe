@@ -19,6 +19,9 @@
 		<!-- analytics -->
 		<script>
 			<?php echo $data['google_analytics']; ?> 
+			
+			<?php echo $data['custom_jsh']; ?>
+			
 		</script>
 	
 	</body>

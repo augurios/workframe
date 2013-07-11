@@ -1067,7 +1067,16 @@ $of_options[] = array( 	"name" 		=> "",
 						"options" 	=> $of_categories
 				);
 				
-$of_options[] = array( 	"name" 		=> "Input Checkbox (false)",
+$of_options[] = array( 	"name" 		=> "",
+					"desc" 		=> "<b>Home widget area columns</b> select how many columns for the Widget area",
+						"id" 		=> "hwacol",
+						"std" 		=> "1",
+						"type" 		=> "select",
+						"mod" 		=> "mini",
+						"options" 	=> array("onecolumn" => "1","twocollum" => "2","tricolumn" => "3")
+				);	
+				
+/*$of_options[] = array( 	"name" 		=> "Input Checkbox (false)",
 						"desc" 		=> "Example checkbox with false selected.",
 						"id" 		=> "example_checkbox_false",
 						"std" 		=> 0,
@@ -1147,7 +1156,7 @@ $of_options[] = array( 	"name" 		=> "Multicheck",
 						"std" 		=> array("three","two"),
 						"type" 		=> "multicheck",
 						"options" 	=> $of_options_radio
-				);
+				); */
 				
  
 				
@@ -1156,66 +1165,30 @@ $of_options[] = array( 	"name" 		=> "Advanced Settings",
 						"type" 		=> "heading"
 				);
 				
-$of_options[] = array( 	"name" 		=> "Folding Checkbox",
-						"desc" 		=> "This checkbox will hide/show a couple of options group. Try it out!",
+$of_options[] = array( 	"name" 		=> "Enable advanced options",
+						"desc" 		=> "Dragons ahead! only use this if you know what you are doing.",
 						"id" 		=> "offline",
 						"std" 		=> 0,
 						"folds" 	=> 1,
 						"type" 		=> "checkbox"
 				);
 				
-$of_options[] = array( 	"name" 		=> "Hidden option 1",
-						"desc" 		=> "This is a sample hidden option 1",
-						"id" 		=> "hidden_option_1",
-						"std" 		=> "Hi, I\'m just a text input",
-						"fold" 		=> "offline", /* the checkbox hook */
-						"type" 		=> "text"
+$of_options[] = array( 	"name" 		=> "Custom head JS",
+						"desc" 		=> "Quickly add some JS to the site's head.",
+						"id" 		=> "custom_jsh",
+						"std" 		=> "",
+						"fold" 		=> "offline",
+						"type" 		=> "textarea"
 				);
 				
-$of_options[] = array( 	"name" 		=> "Hidden option 2",
-						"desc" 		=> "This is a sample hidden option 2",
-						"id" 		=> "hidden_option_2",
-						"std" 		=> "Hi, I\'m just a text input",
-						"fold" 		=> "offline", /* the checkbox hook */
-						"type" 		=> "text"
+$of_options[] = array( 	"name" 		=> "Custom footer JS",
+						"desc" 		=> "Quickly add some JS to the site's footer.",
+						"id" 		=> "custom_jsf",
+						"std" 		=> "",
+						"fold" 		=> "offline",
+						"type" 		=> "textarea"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Hello there!",
-						"desc" 		=> "",
-						"id" 		=> "introduction_2",
-						"std" 		=> "<h3 style=\"margin: 0 0 10px;\">Grouped Options.</h3>
-						You can group a bunch of options under a single heading by removing the 'name' value from the options array except for the first option in the group.",
-						"icon" 		=> true,
-						"type" 		=> "info"
-				);
-				
-				$of_options[] = array( 	"name" 		=> "Some pretty colors for you",
-										"desc" 		=> "Color 1.",
-										"id" 		=> "example_colorpicker_3",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 2.",
-										"id" 		=> "example_colorpicker_4",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 3.",
-										"id" 		=> "example_colorpicker_5",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 4.",
-										"id" 		=> "example_colorpicker_6",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
+			
 				
 // Backup Options
 $of_options[] = array( 	"name" 		=> "Backup Options",

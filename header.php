@@ -63,7 +63,9 @@
 			});
 		});
 		<?php } ?>
-
+		
+		<?php echo $data['custom_jsh']; ?>
+		
 		</script>
 		
 		<style>

@@ -371,6 +371,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action( 'init', 'custom_post_type_one' );
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -451,12 +452,91 @@ function create_post_type_html5()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
+        'menu_position'       => 20,
         //'taxonomies' => array(
         //    'post_tag',
         //    'category'
         //) // Add Category and Post Tags support
     ));
 }
+
+
+
+// Register Custom Post Type
+function custom_post_type_one() {
+
+	$labels = array(
+		'name'                => _x( 'items', 'Post Type General Name', 'html5blank' ),
+		'singular_name'       => _x( 'Item', 'Post Type Singular Name', 'html5blank' ),
+		'menu_name'           => __( 'Porfolio', 'html5blank' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'html5blank' ),
+		'all_items'           => __( 'All Items', 'html5blank' ),
+		'view_item'           => __( 'View Items', 'html5blank' ),
+		'add_new_item'        => __( 'Add New Item', 'html5blank' ),
+		'add_new'             => __( 'New Item', 'html5blank' ),
+		'edit_item'           => __( 'Edit Item', 'html5blank' ),
+		'update_item'         => __( 'Update Item', 'html5blank' ),
+		'search_items'        => __( 'Search Item', 'html5blank' ),
+		'not_found'           => __( 'No Items found', 'html5blank' ),
+		'not_found_in_trash'  => __( 'No Items found in Trash', 'html5blank' ),
+	);
+	$args = array(
+		'label'               => __( 'portfolio', 'html5blank' ),
+		'description'         => __( 'Portfolio', 'html5blank' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'custom-fields', ),
+		'taxonomies'          => array( 'Filter' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 20,
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+	);
+	register_post_type( 'portfolio', $args );
+	
+}
+// Register Custom Taxonomy
+function portfolio_filter()  {
+
+	$labels = array(
+		'name'                       => _x( 'Filter', 'Taxonomy General Name', 'html5-blank' ),
+		'singular_name'              => _x( 'Filter', 'Taxonomy Singular Name', 'html5-blank' ),
+		'menu_name'                  => __( 'Filter', 'html5-blank' ),
+		'all_items'                  => __( 'All Filters', 'html5-blank' ),
+		'parent_item'                => __( 'Parent Filter', 'html5-blank' ),
+		'parent_item_colon'          => __( 'Parent Filter:', 'html5-blank' ),
+		'new_item_name'              => __( 'New Filter item', 'html5-blank' ),
+		'add_new_item'               => __( 'Add New Filter item', 'html5-blank' ),
+		'edit_item'                  => __( 'Edit Filter item', 'html5-blank' ),
+		'update_item'                => __( 'Update Filter item', 'html5-blank' ),
+		'separate_items_with_commas' => __( 'Separate types with commas', 'html5-blank' ),
+		'search_items'               => __( 'Search filter', 'html5-blank' ),
+		'add_or_remove_items'        => __( 'Add or remove filters', 'html5-blank' ),
+		'choose_from_most_used'      => __( 'Choose from the most used genres', 'html5-blank' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'Filter', 'custom_post_type_one', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'portfolio_filter', 0 );
+
 
 /*------------------------------------*\
 	ShortCode Functions

@@ -119,9 +119,11 @@
 		    break;
 		    case 'block_two':
 		    ?>
-		    <div class="sidebar-widget">
+		    <section id="homewidgetarea">
+		      <div class="sidebar-widget <?php echo $data['hwacol']; ?>">
 				<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('home-area-1')) ?>
-			</div>
+			  </div>
+			</section>	
 		    <?php
 		    break;
 		    case 'block_three': 
