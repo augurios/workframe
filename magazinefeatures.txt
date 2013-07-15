@@ -1,0 +1,7 @@
+-Tabbed Recent/popular/comments widget.
+
+-Featured Category and latest post home blocks: 
+First post would take whole width, later posts would turn into a 2 column block grid.
+
+
+
