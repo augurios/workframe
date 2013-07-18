@@ -1,8 +1,8 @@
 /*
-	Theme Name: Magazine Frame
+	Theme Name: Skeuo
 	Theme URI: http://spinaestudio.com
-	Description: Spina's Magazine theme base.
-	Version: 0.4
+	Description: Skeuo, Minimal flat design theme.
+	Version: 0.4.1
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -70,6 +70,10 @@ input:focus {
     STRUCTURE
 \*------------------------------------*/
 
+body {
+	padding-top: 50px;
+}
+
 /* wrapper */
 .wrapper {
 	max-width:1280px;
@@ -79,6 +83,9 @@ input:focus {
 }
 /* header */
 .header {
+	height: 50px;
+	position: fixed;
+	top: 0px;
 	
 }
 /* logo */
@@ -89,8 +96,11 @@ input:focus {
 	
 }
 /* nav */
-.nav {
-	
+.nav ul li {
+	float: left;
+}
+.nav ul li ul {
+	display: none;
 }
 /* slider */
 
