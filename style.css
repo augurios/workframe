@@ -2,7 +2,7 @@
 	Theme Name: Skeuo
 	Theme URI: http://spinaestudio.com
 	Description: Skeuo, Minimal flat design theme.
-	Version: 0.4.1
+	Version: 0.4.2
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -66,14 +66,25 @@ input:focus {
 	border:1px solid #04A4CC;
 }
 
+@font-face {
+  font-family: 'flat';
+  src: url('fonts/flat.eot?48146155');
+  src: url('fonts/flat.eot?48146155#iefix') format('embedded-opentype'),
+       url('fonts/flat.woff?48146155') format('woff'),
+       url('fonts/flat.ttf?48146155') format('truetype'),
+       url('fonts/flat.svg?48146155#flat') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
 
 body {
 	padding-top: 50px;
+    background-image:url(images/noise_bg-150x150.png);
 }
-
 /* wrapper */
 .wrapper {
 	max-width:1280px;
@@ -86,22 +97,155 @@ body {
 	height: 50px;
 	position: fixed;
 	top: 0px;
-	
+	width:100%;
+    left:0;
+    z-index:9999;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    background-origin:border-box;
+    box-shadow:rgba(0,0,0,0.4) 0px 2px 4px -1px;
 }
 /* logo */
 .logo {
-	
+	float:left;
+    height:50px;
+}
+.logo a {
+    color:#FFF;
+    font-weight:600;
+    font-size:1.6em;
+    display:block;
+    padding: 11px 0;
+    letter-spacing:-2px
 }
 .logo-img {
 	
 }
-/* nav */
-.nav ul li {
-	float: left;
-}
-.nav ul li ul {
-	display: none;
+body.admin-bar header {
+    top: 28px;
 }
+/* nav */
+.nav {
+    float:left;
+}
+.nav ul {
+    margin:0;
+}
+.nav ul > li {
+	float: left;
+    height:50px;
+    display:table;
+    padding:0 15px;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    position:relative;
+}
+.nav ul li:last-child {
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+.nav ul li:hover {
+    background: rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.0);
+}
+.nav ul li a {
+    display:table-cell;
+    vertical-align:middle;
+    color:#fff;
+    font-size:1.2em;
+}
+.nav ul li > ul {
+	display: none;
+    visibility: visible;
+    position:absolute;
+    top:50px;
+    left:-1px;
+    right:-1px;
+    padding:0;
+    width:18em;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+    box-shadow:rgba(0,0,0,0.4) 2px 2px 4px -1px;
+}
+.menu-parent-item:hover {
+    margin-right:-1px;
+}
+.nav ul li.menu-parent-item > a:after {
+    content: '\e801';
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    margin-left:10px;
+}
+.nav ul li ul li {
+    width:100%;
+    float:none;
+    border:0 solid #fff !important;
+}
+.nav ul li:hover > ul {
+    display:block;
+}
+.nav ul li ul li ul {
+    display: none;
+    position:absolute;
+    top:0px;
+    left:18em;
+    box-shadow:rgba(0,0,0,0.4) 2px 2px 4px -1px;
+}
+.nav ul li ul li:hover > ul {
+    display:block;
+}
+.nav ul li ul li.menu-parent-item > a:after {
+    content: '\e800';
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+}
+.centerfix {
+    max-width:1280px;
+	width:95%;
+	margin:0 auto;
+}
+/* toolbox */
+#toolbox {
+    float:right;
+    color: white;
+    display:table;
+    height:50px;
+    text-align:right;
+}
+#searchbut {
+    display:table-cell;
+    vertical-align:middle;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding:0 15px;
+}
+#searchbut:before {
+    content: '\e809';
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    font-size:2em;
+}
+#socialinks {
+    display:table-cell;
+    vertical-align:middle;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    padding:0 15px;
+}
+#socialinks:before {
+    content: '\e803';
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    font-size:2em;
+}
+#socialinks:hover, #searchbut:hover  {
+    background: rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.0);
+}   
 /* slider */
 
 .slide {
@@ -122,6 +266,13 @@ body {
 	width: 80%;
 	text-align: center;
 	float: left; 
+}
+/* homepage */
+#homeblock {
+    background-color: #fff;
+    padding:15px;
+    margin-top:60px;
+    border:1px solid #D9D9D9;
 }
 /* sidebar */
 .sidebar {

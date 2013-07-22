@@ -69,7 +69,7 @@
 		</script>
 		
 		<style>
-			.pcolor {
+			.pcolor, .nav ul li ul  {
 				background-color: <?php echo $data['pri_color']; ?>;
 			}
 			.scolor {
@@ -104,8 +104,8 @@
 		<div class="wrapper<?php echo $data['site_layout']; ?>">
 	
 			<!-- header -->
-			<header class="header clear" role="banner">
-				
+			<header class="header clear pcolor" role="banner">
+				<div class="centerfix">
 					<!-- logo -->
 					<div class="logo gfont">
 						<a href="<?php echo home_url(); ?>">
@@ -122,8 +122,12 @@
 					<nav class="nav" role="navigation">
 						<?php html5blank_nav(); ?>
 					</nav>
+                    <div id="toolbox">
+                        <span id="searchbut"></span>
+                        <span id="socialinks"></span>
+                    </div>
 					<!-- /nav -->
-			
+			     </div>
 			</header>
 			<!-- /header -->
 			
