@@ -2,7 +2,7 @@
 	Theme Name: Skeuo
 	Theme URI: http://spinaestudio.com
 	Description: Skeuo, Minimal flat design theme.
-	Version: 0.4.2
+	Version: 0.4.3
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -112,9 +112,9 @@ body {
 .logo a {
     color:#FFF;
     font-weight:600;
-    font-size:1.6em;
+    font-size:2.4em;
     display:block;
-    padding: 11px 0;
+    padding: 5px 0;
     letter-spacing:-2px
 }
 .logo-img {
@@ -218,6 +218,7 @@ body.admin-bar header {
     vertical-align:middle;
     border-left: 1px solid rgba(255,255,255,0.2);
     padding:0 15px;
+    position: relative;
 }
 #searchbut:before {
     content: '\e809';
@@ -227,12 +228,46 @@ body.admin-bar header {
     speak: none;
     font-size:2em;
 }
+#searchbut div {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+	visibility: visible;
+	width: 183px;
+}
+#searchbut form {
+	width: 365px;
+	padding: 5px 10px;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+    box-shadow:rgba(0,0,0,0.4) 2px 2px 4px -1px;
+    margin-top: 50px;
+    margin-left: -181px;
+}
+#searchbut:hover div, #searchbut .focused {
+	display: block;
+}
+#searchbut input[type=search] {
+	width: 75%;
+	font-size: 1.6em;
+	padding: 0 5px;
+	border: 0;
+	margin: 0;
+	height: 30px;
+}
+#searchbut button {
+	border: 0;
+	margin: 0;
+	font-size: 1.6em;
+}
 #socialinks {
     display:table-cell;
     vertical-align:middle;
     border-left: 1px solid rgba(255,255,255,0.2);
     border-right: 1px solid rgba(255,255,255,0.2);
     padding:0 15px;
+    position: relative;
 }
 #socialinks:before {
     content: '\e803';
@@ -245,7 +280,27 @@ body.admin-bar header {
 #socialinks:hover, #searchbut:hover  {
     background: rgba(255,255,255,0.2);
     border-left: 1px solid rgba(255,255,255,0.0);
-}   
+} 
+#socialinks div {
+	display: none;
+	visibility: visible;
+	position: absolute;
+	top:0;
+	right:0;
+}
+#socialinks:hover div {
+	display: block;
+}
+#socialinks ul {
+	margin-top: 50px;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+    box-shadow:rgba(0,0,0,0.4) 2px 2px 4px -1px;
+}
+#socialinks li {
+	display: inline-block;
+}
+
 /* slider */
 
 .slide {

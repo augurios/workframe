@@ -14,3 +14,12 @@ $(function() {
 	}
 
 });
+$(function() {
+	$('#searchbut .search-input').focus(function() {
+	  $('#searchbut div').addClass('focused');
+	});
+	$('#searchbut .search-input').blur(function() {
+	  $('#searchbut div').removeClass('focused');
+	});
+	$("#socialinks").hover(function(){$('#searchbut div').removeClass('focused');});
+});

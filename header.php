@@ -123,8 +123,26 @@
 						<?php html5blank_nav(); ?>
 					</nav>
                     <div id="toolbox">
-                        <span id="searchbut"></span>
-                        <span id="socialinks"></span>
+                        <span id="searchbut"><!-- search -->
+							<div>
+							<form class="search pcolor" method="get" action="<?php echo home_url(); ?>" role="search">
+								
+								<input class="search-input" type="search" name="s" placeholder="To search, type and hit enter.">
+								<button class="search-submit scolor" type="submit" role="button"><?php _e( 'Search', 'html5blank' ); ?></button>
+								
+							</form>
+							</div>
+<!-- /search --></span>
+                        <span id="socialinks">
+                        	<div>
+	                        	<ul class="pcolor">
+		                        	<li class="rss"><a href="<?php echo home_url(); ?>feed/">RSS</a></li>
+		                        	<li class="fblink"><a href="#">Facebook</a></li>
+		                        	<li class="twrlink"><a href="#">twitter</a></li>
+		                        	<li class="ytblink"><a href="#">Youtube</a></li>
+	                        	</ul>
+                        	</div>
+                        </span>
                     </div>
 					<!-- /nav -->
 			     </div>
