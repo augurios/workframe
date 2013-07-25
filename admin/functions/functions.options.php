@@ -303,7 +303,24 @@ $of_options[] = array( 	"name" 		=> "Site Layout",
 							' leftsidebar' 	=> $url . '2cl.png'
 						)
 				);
-				
+$of_options[] = array( 	"name" 		=> "Header Social Links",
+						"desc" 		=> "<b>Facebook</b> Leave blank to hide icon.",
+						"id" 		=> "fb_link",
+						"std" 		=> "http://facebook.com/xxxxxx",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "<b>Twitter</b> Leave blank to hide icon.",
+						"id" 		=> "tw_link",
+						"std" 		=> "http://twitter.com/xxxxxx",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "<b>Youtube</b> Leave blank to hide icon.",
+						"id" 		=> "yt_link",
+						"std" 		=> "http://youtube.com/xxxxxx",
+						"type" 		=> "text"
+				);
 $of_options[] = array( 	"name" 		=> "Tracking Code",
 						"desc" 		=> "Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.",
 						"id" 		=> "google_analytics",
@@ -342,7 +359,7 @@ $of_options[] = array( 	"name" 		=> "Foreground Color",
 $of_options[] = array( 	"name" 		=> "Background Color",
 						"desc" 		=> "Used mostly on backgrounds.",
 						"id" 		=> "sec_color",
-						"std" 		=> "#FFFFFF",
+						"std" 		=> "#9CD58B",
 						"type" 		=> "color"
 				);
 				

@@ -72,7 +72,7 @@
 			.pcolor, .nav ul li ul  {
 				background-color: <?php echo $data['pri_color']; ?>;
 			}
-			.scolor {
+			.scolor, #paginator .selected {
 				background-color: <?php echo $data['sec_color']; ?>;
 			}
 			.gfont {
@@ -136,10 +136,16 @@
                         <span id="socialinks">
                         	<div>
 	                        	<ul class="pcolor">
-		                        	<li class="rss"><a href="<?php echo home_url(); ?>feed/">RSS</a></li>
-		                        	<li class="fblink"><a href="#">Facebook</a></li>
-		                        	<li class="twrlink"><a href="#">twitter</a></li>
-		                        	<li class="ytblink"><a href="#">Youtube</a></li>
+		                        	<li class="rss"><a href="<?php echo home_url(); ?>/feed/">RSS</a></li>
+		                        	<?php if ($data['fb_link'] != "") { ?>
+		                        	<li class="fblink"><a href="<?php echo $data['fb_link']; ?>">Facebook</a></li>
+		                        	<?php } ?>
+		                        	<?php if ($data['tw_link'] != "") { ?> 
+		                        	<li class="twrlink"><a href="<?php echo $data['tw_link']; ?>">twitter</a></li>
+		                        	<?php } ?>
+		                        	<?php if ($data['tw_link'] != "") { ?> 
+		                        	<li class="ytblink"><a href="<?php echo $data['yt_link']; ?>">Youtube</a></li>
+		                        	<?php } ?>
 	                        	</ul>
                         	</div>
                         </span>
@@ -147,6 +153,7 @@
 					<!-- /nav -->
 			     </div>
 			</header>
+			<div id="content" class="clear">
 			<!-- /header -->
 			
 			

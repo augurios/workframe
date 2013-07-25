@@ -1,4 +1,5 @@
 <?php global $data; ?>
+</div><!-- content -->
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 				
