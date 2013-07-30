@@ -369,8 +369,8 @@ $of_options[] = array( 	"name" 		=> "Text Color",
 						"std" 		=> "#000000",
 						"type" 		=> "color"
 				);
-$of_options[] = array( 	"name" 		=> "Custom Primary Font",
-						"desc" 		=> "Custom fonts from <a href='http://www.google.com/fonts/'>Google Fonts</a>, used on titles and headings",
+$of_options[] = array( 	"name" 		=> "Primary Font",
+						"desc" 		=> "Fonts from <a href='http://www.google.com/fonts/'>Google Fonts</a>, used on titles and headings. Leave blank to use default web font.",
 						"id" 		=> "gf_select",
 						"std" 		=> "Select a font",
 						"type" 		=> "select_google_font",
@@ -1027,11 +1027,17 @@ $of_options[] = array( 	"name" 		=> "Custom Primary Font",
 										"Zeyada" => "Zeyada"
 						)
 				);
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "Used on titles and headings. Leave Google font blank to use this font.",
+						"id" 		=> "sp_font",
+						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#000000'),
+						"type" 		=> "typography"
+				);  
 				
 $of_options[] = array( 	"name" 		=> "Body Font",
 						"desc" 		=> "Specify the body font properties",
 						"id" 		=> "body_font",
-						"std" 		=> array('size' => '12px','face' => 'arial','style' => 'normal','color' => '#000000'),
+						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#000000'),
 						"type" 		=> "typography"
 				);  
 				

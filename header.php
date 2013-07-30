@@ -18,8 +18,7 @@
 		
 		<!-- icons -->
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
-		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-		<link href='http://fonts.googleapis.com/css?family=<?php echo $cssfont; ?>' rel='stylesheet' type='text/css'>	
+		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed"><?php if ($data['gf_select'] != "none") { ?><link href='http://fonts.googleapis.com/css?family=<?php echo $cssfont; ?>' rel='stylesheet' type='text/css'><?php } ?>	
 		
 		<!-- css + javascript -->
 		<?php wp_head(); ?>
@@ -44,7 +43,7 @@
 					pauseOnHover: true
 				},
 				auto: {
-					timeoutDuration: 2000,
+					timeoutDuration: 4000,
 					delay: 500
 				},
 				prev: {
@@ -69,16 +68,20 @@
 		</script>
 		
 		<style>
-			.pcolor, .nav ul li ul  {
+			.pcolor, .nav ul li ul, .slide p  {
 				background-color: <?php echo $data['pri_color']; ?>;
 			}
-			.scolor, #paginator .selected {
+			.scolor, #paginator .selected, .slide h2, .slide h1, .slide h3, .slide h4 {
 				background-color: <?php echo $data['sec_color']; ?>;
 			}
-			.gfont {
-				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;
+			.pfont {
+				Font-family: <?php echo $data['sp_font']['face']?>;<?php if ($data['gf_select'] != "none") { ?>
+				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;<?php } ?>
+				Font-size: <?php echo $data['sp_font']['size']?>;
+				Color: <?php echo $data['sp_font']['color']?> ;
+				Font-weight: <?php echo $data['sp_font']['style']?>;
 			}
-			.bfont {
+			.bfont, .slider p {
 				Font-family: <?php echo $data['body_font']['face']?>;
 				Font-size: <?php echo $data['body_font']['size']?>;
 				Color: <?php echo $data['body_font']['color']?> ;
@@ -107,7 +110,7 @@
 			<header class="header clear pcolor" role="banner">
 				<div class="centerfix">
 					<!-- logo -->
-					<div class="logo gfont">
+					<div class="logo pfont">
 						<a href="<?php echo home_url(); ?>">
 							<?php if ($data['logo_img'] == "") { ?>
 								<?php bloginfo( 'name' ); ?>

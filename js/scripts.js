@@ -22,4 +22,11 @@ $(function() {
 	  $('#searchbut div').removeClass('focused');
 	});
 	$("#socialinks").hover(function(){$('#searchbut div').removeClass('focused');});
+    
+    $("#slider *").mouseout(function(){$('#controls').addClass('arron');});
+    $("#sliderap").mouseout(function(){$('#controls').removeClass('arron');});
+    $("#slider").hover(function(){$('#controls').addClass('arron');});
+    $("#slider *").hover(function(){$('#controls').addClass('arron');});
+    $("#controls *").hover(function(){$('#controls').addClass('arron');});
+    $(".slide").hover(function(){$('#controls').addClass('arron');});
 });

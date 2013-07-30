@@ -14,7 +14,7 @@
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-bg' );
 				$url = $thumb['0']; ?>
 				
-					<li class="slide post-<?php the_ID(); ?>" style="background-image:url(<?php echo $url; ?>);"></h1>
+					<li class="slide gfont post-<?php the_ID(); ?>" style="background-image:url(<?php echo $url; ?>);"></h1>
 					
 						<?php the_content() ?>
 					
@@ -26,12 +26,12 @@
 				</ul>
 				<div id="controls">
 					<a id="next" class="arrow" href="#">next</a>
-					<span id="paginator" class="pcolor">
+					<span id="paginator">
 						<?php	
 						    $args = array( 'post_type' => 'slides', 'posts_per_page' => 100, 'order' => 'ASC' );
 						    $loop = new WP_Query( $args );
 						    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							    		<a href="#"><?php the_title() ?></a>
+							    		<a href="#" class="pcolor"><?php the_title() ?></a>
 						<?php endwhile; ?>	    		
 		
 							    	
@@ -82,7 +82,7 @@
 				    <!-- /post thumbnail -->
 				    
 				    <!-- post title -->
-				    <h2>
+				    <h2 class='pcolor'>
 				    	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 				    </h2>
 				    <!-- /post title -->
