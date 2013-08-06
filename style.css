@@ -2,7 +2,7 @@
 	Theme Name: Skeuo
 	Theme URI: http://spinaestudio.com
 	Description: Skeuo, Minimal flat design theme.
-	Version: 0.4.4
+	Version: 0.4.5
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -386,6 +386,9 @@ body.admin-bar header {
     width:70%;
     float:left;
 }
+#sliderap {
+     padding:0 0 20px 0;;
+}
 #slider {
     padding:0;
 }
@@ -468,12 +471,83 @@ body.admin-bar header {
     
 }
 #latepostblock {
-
+    
 }
 #latepostblock h2 {
-    margin:0 0 15px 0;
-    padding:15px
+    clear:right;
+    margin:0 0 7px 0;
+    padding:0px 0 6px 0px;
+    width: 64%;
+    float:right;
+    border-bottom:1px solid #D9D9D9;
 }
+#latepostblock h2 a{
+    font-size:2.7em;
+}
+#latepostblock .hgthumb {
+    float:left;
+    width:32%;
+    min-height:169px;
+    background-size: cover;
+}
+#latepostblock .hgthumb img {
+    visibility:hidden;
+} 
+.hpmeta {
+    width: 64%;
+    float:right;
+    clear:right;
+    margin:0 0 10px 0;
+    padding:0px 0 10px 0px;
+    font-size:1.2em;
+    border-bottom:1px solid #D9D9D9;
+}
+#latepostblock .caticon {
+    position:absolute;
+    left:0;
+    top:10px;
+    padding:5px 7px 5px 5px;
+    font-size:1.5em;
+    font-weight:bold;
+}
+#latepostblock .author {
+    float:right;
+}
+#latepostblock .comments {
+    float:right;
+    margin-bottom:5px;
+    clear:both;
+    font-size:1.2em;
+}
+#latepostblock .comments a:before {
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    content: '\e80b  ';
+}
+#latepostblock .comments span:before {
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    content: '\e80c  ';
+}
+#latepostblock .post {
+    clear:both;
+    min-height:169px;
+    margin-bottom:20px;
+    border-bottom:1px solid #D9D9D9;
+    position:relative;
+}
+#latepostblock .post p {
+    width: 64%;
+    float:right;
+    clear:right;
+    font-size:1.5em;
+    margin:0 0 10px 0;
+}
+
 /* sidebar */
 .sidebar {
     width:30%;

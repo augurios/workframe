@@ -372,7 +372,7 @@ $of_options[] = array( 	"name" 		=> "Text Color",
 $of_options[] = array( 	"name" 		=> "Primary Font",
 						"desc" 		=> "Fonts from <a href='http://www.google.com/fonts/'>Google Fonts</a>, used on titles and headings. Leave blank to use default web font.",
 						"id" 		=> "gf_select",
-						"std" 		=> "Select a font",
+						"std" 		=> "Fauna One",
 						"type" 		=> "select_google_font",
 						"preview" 	=> array(
 										"text" => "This is my preview text!", //this is the text from preview box
@@ -585,6 +585,7 @@ $of_options[] = array( 	"name" 		=> "Primary Font",
 										"Fascinate" => "Fascinate",
 										"Fascinate Inline" => "Fascinate Inline",
 										"Faster One" => "Faster One",
+										"Fauna One" => "Fauna One",
 										"Fasthand" => "Fasthand",
 										"Federant" => "Federant",
 										"Federo" => "Federo",
@@ -1037,7 +1038,7 @@ $of_options[] = array( 	"name" 		=> "",
 $of_options[] = array( 	"name" 		=> "Body Font",
 						"desc" 		=> "Specify the body font properties",
 						"id" 		=> "body_font",
-						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#000000'),
+						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#ffffff'),
 						"type" 		=> "typography"
 				);  
 				

@@ -54,64 +54,79 @@
 		
 		    case 'block_one':
 		    ?>
-		    <section id="latepostblock">
+		    <section id="latepostblock" class="clear">
 		    <?php 
 		    	$pcount = $data['post_counts'];
-		    	$args = array (
-				'pagination'             => true,
-				'posts_per_page'         => "$pcount",
-			);
-			
-			// The Query
-			$homelatest = new WP_Query( $args );
-			
-			// The Loop
-			if ( $homelatest->have_posts() ) {
-			while ( $homelatest->have_posts() ) { $homelatest->the_post(); ?>
+		$global_posts_query = new WP_Query(
+		array(
+			'posts_per_page' => "$pcount",
+			'paged'                  => '1',
+			'pagination'             => true,
+		)
+	);
+ 
+		if($global_posts_query->have_posts()) :
+		while($global_posts_query->have_posts()) : $global_posts_query->the_post();
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-bg' );
+			$url = $thumb['0']; ?>
 					
 			<!-- article <?php the_ID(); ?> -->
 			
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
+				<article id="post-<?php the_ID(); ?>" <?php post_class('clear'); ?>>
+						
+						<?php
+							$category = get_the_category();
+								if ($category) {
+									echo '<a class="caticon scolor bfontc" href="' . get_category_link( $category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category[0]->name ) . '" ' . '>' . $category[0]->name.'</a> ';
+									}
+						?>
+						
 				    <!-- post thumbnail -->
 				    <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-				    	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				    		<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
+				    	<a class='hgthumb' href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image:url(<?php echo $url; ?>);">
+				    		<?php the_post_thumbnail('small'); ?> 
 				    	</a>
 				    <?php endif; ?>
 				    <!-- /post thumbnail -->
 				    
 				    <!-- post title -->
-				    <h2 class='pcolor'>
-				    	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				    <h2 class='pfonts'>
+				    	<a class='pcolort pfont' href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 				    </h2>
 				    <!-- /post title -->
 				    
 				    <!-- post details -->
-				    <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+				    <div class="hpmeta">
+				    <span class="date"><?php the_time('F j, Y'); ?><!-- <?php the_time('g:i a'); ?> --></span>
 				    <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				    <span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				    </div>
 				    <!-- /post details -->
 				    
 				    
 				    <?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 				    
 				    <?php edit_post_link(); ?>
+				    <span class="comments"><?php comments_popup_link( __( '0', 'html5blank' ), __( '1', 'html5blank' ), __( '% ', 'html5blank' )); ?></span>
 				    
 				</article>
 	
 			<!-- /article <?php the_ID(); ?> -->
 					
-			<?php } } else { ?>
-				
-				<article>
-				    <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-				</article>
-
-				
-			<?php }
+					
+					
+			<?php endwhile; endif;?>
 			
-			// Restore original Post Data
+			  <!-- pagination -->
+	<div class="pag clear">		  
+	<div class="next-posts"><?php next_posts_link('&laquo; Older Entries', $global_posts_query->max_num_pages) ?></div>
+	<div class="prev-posts"><?php previous_posts_link('Newer Entries &raquo;', $global_posts_query->max_num_pages) ?></div>
+	</div>
+			  <!-- /pagination -->
+			
+			
+			
+			
+			<?php // Restore original Post Data
 			wp_reset_postdata();
 			    
 			    
@@ -194,8 +209,13 @@
 			    
 			    
 		    ?>
-				
+		    
+		  <!-- pagination -->
+<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+<!-- /pagination -->				
 		    </section>	
+		    
 		    <?php
 		    }
 		

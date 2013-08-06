@@ -71,21 +71,38 @@
 			.pcolor, .nav ul li ul, .slide p  {
 				background-color: <?php echo $data['pri_color']; ?>;
 			}
+			.pcolort, a {
+				color: <?php echo $data['pri_color']; ?>;
+			}
 			.scolor, #paginator .selected, .slide h2, .slide h1, .slide h3, .slide h4 {
 				background-color: <?php echo $data['sec_color']; ?>;
 			}
 			.pfont {
 				Font-family: <?php echo $data['sp_font']['face']?>;<?php if ($data['gf_select'] != "none") { ?>
-				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;<?php } ?>
+				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;<?php } ?>	
+			}
+			.pfonts {
 				Font-size: <?php echo $data['sp_font']['size']?>;
+			}
+			.pfontc {
 				Color: <?php echo $data['sp_font']['color']?> ;
+			}
+			.pfontw {
 				Font-weight: <?php echo $data['sp_font']['style']?>;
 			}
+			<?php if ($data['gf_select'] != "none") { ?>
+			.slide h2, .slide h1, .slide h3, .slide h4 {
+				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;
+			}
+			<?php } ?>
 			.bfont, .slider p {
 				Font-family: <?php echo $data['body_font']['face']?>;
 				Font-size: <?php echo $data['body_font']['size']?>;
-				Color: <?php echo $data['body_font']['color']?> ;
+				
 				Font-weight: <?php echo $data['body_font']['style']?>;
+			}
+			.bfontc {
+				Color: <?php echo $data['body_font']['color']?> ;
 			}
 			.tcolor {
 				color: <?php echo $data['text_color']; ?>;
