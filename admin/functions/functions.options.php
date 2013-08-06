@@ -1038,7 +1038,7 @@ $of_options[] = array( 	"name" 		=> "",
 $of_options[] = array( 	"name" 		=> "Body Font",
 						"desc" 		=> "Specify the body font properties",
 						"id" 		=> "body_font",
-						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#ffffff'),
+						"std" 		=> array('size' => '11px','face' => 'helvetica','style' => 'normal','color' => '#ffffff'),
 						"type" 		=> "typography"
 				);  
 				
@@ -1068,6 +1068,13 @@ $of_options[] = array( 	"name" 		=> "",
 						"std" 		=> "directscroll",
 						"type" 		=> "select",
 						"options" 	=> array('scroll' => 'scroll','directscroll' => 'directscroll','fade' => 'fade','crossfade' => 'crossfade','cover' => 'cover','cover-fade' => 'cover-fade','uncover' => 'uncover','uncover-fade' => 'uncover-fade'),
+				);
+$of_options[] = array( 	"name" 		=> "",
+						"desc" 		=> "<b>Slider Category</b>: Select a Category for the slider.",
+						"id" 		=> "cat_blocks",
+						"std" 		=> "Select a category:",
+						"type" 		=> "select",
+						"options" 	=> $of_categories
 				);
 				
 $of_options[] = array( 	"name" 		=> "Homepage Layout",

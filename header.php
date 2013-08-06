@@ -68,13 +68,13 @@
 		</script>
 		
 		<style>
-			.pcolor, .nav ul li ul, .slide p  {
+			.pcolor, .nav ul li ul  {
 				background-color: <?php echo $data['pri_color']; ?>;
 			}
 			.pcolort, a {
 				color: <?php echo $data['pri_color']; ?>;
 			}
-			.scolor, #paginator .selected, .slide h2, .slide h1, .slide h3, .slide h4 {
+			.scolor, #paginator .selected {
 				background-color: <?php echo $data['sec_color']; ?>;
 			}
 			.pfont {
@@ -91,12 +91,12 @@
 				Font-weight: <?php echo $data['sp_font']['style']?>;
 			}
 			<?php if ($data['gf_select'] != "none") { ?>
-			.slide h2, .slide h1, .slide h3, .slide h4 {
+			.slide h2 {
 				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;
 			}
 			<?php } ?>
-			.bfont, .slider p {
-				Font-family: <?php echo $data['body_font']['face']?>;
+			.bfont {
+				Font-family: <?php echo $data['body_font']['face']?>,'Helvetica Neue', Helvetica, Arial, sans-serif;
 				Font-size: <?php echo $data['body_font']['size']?>;
 				
 				Font-weight: <?php echo $data['body_font']['style']?>;

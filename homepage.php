@@ -1,24 +1,28 @@
 <?php /* Template Name: Homepage */ get_header(); ?>
 	
 	
-<div id="homeblock">
 <!-- slider -->
 	<?php if ($data['switch_sldr'] == "1") { ?>
 			<div id="sliderap">
 				<ul id="slider"  class="clear">		
 			
-			<?php	
-				$args = array( 'post_type' => 'slides', 'posts_per_page' => 6, 'order' => 'ASC' );
+			<?php
+				$catss = $data['cat_blocks'];
+				$args = array( 'category_name'=> "$catss", 'posts_per_page' => 6 );
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-bg' );
 				$url = $thumb['0']; ?>
 				
 					<li class="slide gfont post-<?php the_ID(); ?>" style="background-image:url(<?php echo $url; ?>);"></h1>
-					
-						<?php the_content() ?>
-					
-
+						<div class="pcolor slidecont">
+							<h2 class='pfonts'>
+				    			<a class='bfontc' href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				    		</h2>
+							<div class="bfontc">
+							<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+							</div>
+						</div>
 					</li>
 			<?php endwhile; ?>			
 					
@@ -28,7 +32,7 @@
 					<a id="next" class="arrow" href="#">next</a>
 					<span id="paginator">
 						<?php	
-						    $args = array( 'post_type' => 'slides', 'posts_per_page' => 100, 'order' => 'ASC' );
+						    $args = array( 'category_name'=> "$catss", 'posts_per_page' => 100, 'order' => 'ASC' );
 						    $loop = new WP_Query( $args );
 						    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							    		<a href="#" class="pcolor"><?php the_title() ?></a>
@@ -41,6 +45,9 @@
 			</div>
 			<?php } ?>
 <!-- /slider -->
+	
+	
+<div id="homeblock">
 
 	<div id="sorted">
 		<?php
