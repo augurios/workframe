@@ -2,7 +2,7 @@
 	Theme Name: Skeuo
 	Theme URI: http://spinaestudio.com
 	Description: Skeuo, Minimal flat design theme.
-	Version: 0.4.7
+	Version: 0.4.8
 	Author: Augusto Valerio R.
 	Author URI: http://spinaestudio.com
 	Tags: two-columns, fixed-width, custom-header, custom-background
@@ -50,6 +50,11 @@ img {
 a {
 	color:#444;
 	text-decoration:none;
+	-webkit-transition: color 200ms linear;
+	   -moz-transition: color 200ms linear;
+        -ms-transition: color 200ms linear;
+         -o-transition: color 200ms linear;
+		    transition: color 200ms linear;
 }
 a:hover {
 	color:#444;
@@ -403,16 +408,28 @@ body.admin-bar header {
     text-align:center;
 }
 .slide h2 {
-    margin:0;
     font-size: 2em;
-    padding:30px 20px 15px;
-    line-height:1.2em;
+	padding: 25px 20px 25px;
+	margin: 30px 0 0 0;
+	line-height: 1.2em;
+	background: rgba(255,255,255,0.1);
 }
 .slide p {
     margin:0;
-    padding:20px 20px 15px;
+    padding:20px 20px 30px;
     font-size:1.3em;
     line-height:1.8em;
+}
+.slidemeta {
+	display: block;
+	margin:0 30px;
+}
+.slidemeta .date {
+	float: left;
+	font-size:1.2em;
+}
+.slidelink {
+	float: right;
 }
 .caroufredsel_wrapper {
     margin:0 !important;

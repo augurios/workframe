@@ -17,11 +17,17 @@
 					<li class="slide gfont post-<?php the_ID(); ?>" style="background-image:url(<?php echo $url; ?>);"></h1>
 						<div class="pcolor slidecont">
 							<h2 class='pfonts'>
-				    			<a class='bfontc' href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				    			<a class='pfontc' href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 				    		</h2>
-							<div class="bfontc">
-							<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+							<div class="pfontc bfonts">
+							<?php html5wp_excerpt('html5wp_slider'); // Build your custom callback length in functions.php ?>
 							</div>
+							
+							<span class="slidemeta pfontc bfonts">
+								<span class="date"><?php the_time('F j, Y'); ?></span>
+								<a class='slidelink pfontc' href="<?php the_permalink(); ?>" title="Read More">></a>
+							</span>
+							
 						</div>
 					</li>
 			<?php endwhile; ?>			
@@ -32,7 +38,7 @@
 					<a id="next" class="arrow" href="#">next</a>
 					<span id="paginator">
 						<?php	
-						    $args = array( 'category_name'=> "$catss", 'posts_per_page' => 100, 'order' => 'ASC' );
+						    $args = array( 'category_name'=> "$catss", 'posts_per_page' => 6 );
 						    $loop = new WP_Query( $args );
 						    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							    		<a href="#" class="pcolor"><?php the_title() ?></a>
@@ -84,7 +90,7 @@
 						<?php
 							$category = get_the_category();
 								if ($category) {
-									echo '<a class="caticon scolor bfontc" href="' . get_category_link( $category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category[0]->name ) . '" ' . '>' . $category[0]->name.'</a> ';
+									echo '<a class="caticon scolor pfontc" href="' . get_category_link( $category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category[0]->name ) . '" ' . '>' . $category[0]->name.'</a> ';
 									}
 						?>
 						
@@ -104,16 +110,16 @@
 				    
 				    <!-- post details -->
 				    <div class="hpmeta">
-				    <span class="date"><?php the_time('F j, Y'); ?><!-- <?php the_time('g:i a'); ?> --></span>
-				    <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+				    <span class="date bfontc"><?php the_time('F j, Y'); ?><!-- <?php the_time('g:i a'); ?> --></span>
+				    <span class="author bfontc"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
 				    </div>
 				    <!-- /post details -->
 				    
-				    
+				    <div class="bfontc">
 				    <?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-				    
+				    </div>
 				    <?php edit_post_link(); ?>
-				    <span class="comments"><?php comments_popup_link( __( '0', 'html5blank' ), __( '1', 'html5blank' ), __( '% ', 'html5blank' )); ?></span>
+				    <span class="comments bfontc"><?php comments_popup_link( __( '0', 'html5blank' ), __( '1', 'html5blank' ), __( '% ', 'html5blank' )); ?></span>
 				    
 				</article>
 	

@@ -362,13 +362,6 @@ $of_options[] = array( 	"name" 		=> "Background Color",
 						"std" 		=> "#9CD58B",
 						"type" 		=> "color"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Text Color",
-						"desc" 		=> "Global font color.",
-						"id" 		=> "text_color",
-						"std" 		=> "#000000",
-						"type" 		=> "color"
-				);
 $of_options[] = array( 	"name" 		=> "Primary Font",
 						"desc" 		=> "Fonts from <a href='http://www.google.com/fonts/'>Google Fonts</a>, used on titles and headings. Leave blank to use default web font.",
 						"id" 		=> "gf_select",
@@ -1031,14 +1024,14 @@ $of_options[] = array( 	"name" 		=> "Primary Font",
 $of_options[] = array( 	"name" 		=> "",
 						"desc" 		=> "Used on titles and headings. Leave Google font blank to use this font.",
 						"id" 		=> "sp_font",
-						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#000000'),
+						"std" 		=> array('size' => '11px','face' => 'arial','style' => 'normal','color' => '#ffffff'),
 						"type" 		=> "typography"
 				);  
 				
 $of_options[] = array( 	"name" 		=> "Body Font",
 						"desc" 		=> "Specify the body font properties",
 						"id" 		=> "body_font",
-						"std" 		=> array('size' => '11px','face' => 'helvetica','style' => 'normal','color' => '#ffffff'),
+						"std" 		=> array('size' => '11px','face' => 'helvetica','style' => 'normal','color' => '#444444'),
 						"type" 		=> "typography"
 				);  
 				

@@ -30,7 +30,7 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('slide-bg');
-    add_image_size('slide-bg', 885, 400, true);
+    add_image_size('slide-bg', 786, 400, true);
     add_image_size('hpthumb', 300, 169, true);
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -253,6 +253,10 @@ function html5wp_index($length) // Create 20 Word Callback for Index page Excerp
 function html5wp_custom_post($length)
 {
     return 40;
+}
+function html5wp_slider($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
+{
+    return 20;
 }
 
 // Create the Custom Excerpts callback

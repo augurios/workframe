@@ -78,17 +78,15 @@
 				background-color: <?php echo $data['sec_color']; ?>;
 			}
 			.pfont {
-				Font-family: <?php echo $data['sp_font']['face']?>;<?php if ($data['gf_select'] != "none") { ?>
+				font-family: <?php echo $data['sp_font']['face']?>;<?php if ($data['gf_select'] != "none") { ?>
 				font-family: '<?php echo $data['gf_select']; ?>', sans-serif;<?php } ?>	
 			}
 			.pfonts {
-				Font-size: <?php echo $data['sp_font']['size']?>;
+				font-size: <?php echo $data['sp_font']['size']?>;
+				font-style: <?php echo $data['sp_font']['style']?>;
 			}
-			.pfontc {
-				Color: <?php echo $data['sp_font']['color']?> ;
-			}
-			.pfontw {
-				Font-weight: <?php echo $data['sp_font']['style']?>;
+			.pfontc, .nav ul li a  {
+				color: <?php echo $data['sp_font']['color']?> ;
 			}
 			<?php if ($data['gf_select'] != "none") { ?>
 			.slide h2 {
@@ -96,13 +94,14 @@
 			}
 			<?php } ?>
 			.bfont {
-				Font-family: <?php echo $data['body_font']['face']?>,'Helvetica Neue', Helvetica, Arial, sans-serif;
-				Font-size: <?php echo $data['body_font']['size']?>;
-				
-				Font-weight: <?php echo $data['body_font']['style']?>;
+				font-family: <?php echo $data['body_font']['face']?>,'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+			.bfonts {
+				font-size: <?php echo $data['body_font']['size']?>;
+				font-style: <?php echo $data['body_font']['style']?>;
 			}
 			.bfontc {
-				Color: <?php echo $data['body_font']['color']?> ;
+				color: <?php echo $data['body_font']['color']?> ;
 			}
 			.tcolor {
 				color: <?php echo $data['text_color']; ?>;
