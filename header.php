@@ -68,8 +68,11 @@
 		</script>
 		
 		<style>
-			.pcolor, .nav ul li ul  {
+			.pcolor, .nav ul li ul {
 				background-color: <?php echo $data['pri_color']; ?>;
+			}
+			.slide h2:before {
+				border-right-color: <?php echo $data['pri_color']; ?>;
 			}
 			.pcolort, a {
 				color: <?php echo $data['pri_color']; ?>;
@@ -147,7 +150,7 @@
 							<form class="search pcolor" method="get" action="<?php echo home_url(); ?>" role="search">
 								
 								<input class="search-input" type="search" name="s" placeholder="To search, type and hit enter.">
-								<button class="search-submit scolor" type="submit" role="button"><?php _e( 'Search', 'html5blank' ); ?></button>
+								<button class="search-submit scolor pfontc" type="submit" role="button"><?php _e( 'Search', 'html5blank' ); ?></button>
 								
 							</form>
 							</div>

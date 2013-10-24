@@ -59,6 +59,7 @@ a {
 a:hover {
 	color:#444;
 }
+
 a:focus {
 	outline:0;
 }
@@ -249,6 +250,7 @@ body.admin-bar header {
 }
 #searchbut form {
 	width: 365px;
+    min-height:41px;
 	padding: 5px 10px;
 	border-bottom: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.5);
@@ -267,11 +269,16 @@ body.admin-bar header {
 	border: 0;
 	margin: 0;
 	height: 30px;
+    display: block;
+    float: left;
 }
 #searchbut button {
 	border: 0;
 	margin: 0;
 	font-size: 1.6em;
+    padding: 4px 7px 5px;
+    display: block;
+    float: left;
 }
 #socialinks {
     display:table-cell;
@@ -406,6 +413,7 @@ body.admin-bar header {
     float:right;
     min-height: 400px;
     text-align:center;
+    position:relative;
 }
 .slide h2 {
     font-size: 2em;
@@ -413,6 +421,34 @@ body.admin-bar header {
 	margin: 30px 0 0 0;
 	line-height: 1.2em;
 	background: rgba(255,255,255,0.1);
+    position:relative;
+}
+.slide h2:before {
+    left: -30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.slide h2:before {
+	border-width: 15px;
+	top: 22px;
+}
+.slide h2:after {
+    right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.slide h2:after {
+	border-right-color: rgba(255,255,255,0.1);
+	border-width: 15px;
+	top: 22px;
 }
 .slide p {
     margin:0;
@@ -428,8 +464,34 @@ body.admin-bar header {
 	float: left;
 	font-size:1.2em;
 }
+.slidemeta .date:before {
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    content: '\e80d   ';
+    display:inline;
+}
 .slidelink {
 	float: right;
+}
+.slidelink:before {
+    font-family: "flat";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    content: '\e80f';
+    background: rgba(0,0,0,0.1);
+    display:block;
+    padding: 2px 13px;
+    -webkit-transition: background 200ms linear;
+       -moz-transition: background 200ms linear;
+        -ms-transition: background 200ms linear;
+         -o-transition: background 200ms linear;
+            transition: background 200ms linear;
+}
+.slidelink:hover:before {
+    background: rgba(255,255,255,0.1);
 }
 .caroufredsel_wrapper {
     margin:0 !important;
@@ -448,10 +510,10 @@ body.admin-bar header {
     opacity:0.0;
     display:block;
     -webkit-transition: all 300ms ;
-		-moz-transition: all 300ms ;
+       -moz-transition: all 300ms ;
         -ms-transition: all 300ms ;
-        -o-transition: all 300ms ;
-		transition: all 300ms ;
+         -o-transition: all 300ms ;
+		    transition: all 300ms ;
 }
 #controls.arron .arrow {
     opacity:0.4;

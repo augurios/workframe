@@ -25,7 +25,7 @@
 							
 							<span class="slidemeta pfontc bfonts">
 								<span class="date"><?php the_time('F j, Y'); ?></span>
-								<a class='slidelink pfontc' href="<?php the_permalink(); ?>" title="Read More">></a>
+								<a class='slidelink pfontc' href="<?php the_permalink(); ?>" title="Read More"></a>
 							</span>
 							
 						</div>
